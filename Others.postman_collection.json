@@ -1,0 +1,206 @@
+{
+	"info": {
+		"_postman_id": "5af6458d-7138-4916-ab1d-3f79eaca450b",
+		"name": "Others",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Review",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var body = {",
+							" \"service\": \"site-bisuness\", ",
+							" \"method\": \"createReview\",",
+							" \"params\": {},",
+							" \"body\": { \"entity\": 11,",
+							"  \"entityId\": 1,",
+							"  \"author\": 4,",
+							"  \"cityId\": 61,",
+							"  \"authorId\": 1,",
+							"  \"authorParams\": {",
+							"    \"name\": \"Аноним\",",
+							"    \"email\": \"anonim@gmail.com\"",
+							"  },",
+							"  \"content\": \"Это мой первый отзыв\",",
+							"  \"source\": 1,",
+							"  \"createdAt\": \"2019-10-10T08:30:52Z\",",
+							"  \"addedAt\": \"2019-10-10T08:30:52Z\",",
+							"  \"scores\": [",
+							"    {",
+							"      \"criterion\": 1,",
+							"      \"scoreValue\": 4",
+							"    }",
+							"  ]}",
+							"};",
+							"",
+							"",
+							"pm.environment.set('req_body', JSON.stringify(body));",
+							"",
+							"console.log(\"req_body\",pm.environment.get('req_body'));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic test_local",
+						"type": "text"
+					},
+					{
+						"key": "ECO_SID",
+						"value": "be1af7ff-7fd4-4cbf-8a79-dbe699a5a49c1231243120",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{{req_body}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://ecosystem.esoft.space/api",
+					"protocol": "https",
+					"host": [
+						"ecosystem",
+						"esoft",
+						"space"
+					],
+					"path": [
+						"api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delinations",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic test",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "service",
+							"value": "maintask-business",
+							"type": "text"
+						},
+						{
+							"key": "method",
+							"value": "createAndSetParams",
+							"type": "text"
+						},
+						{
+							"key": "body",
+							"value": "[{\n\t\"task\": {\n\t\t\"categoryId\": 8,\n\t\t\"priorityId\": 3,\n\t\t\"statusId\": 1,\n\t\t\"title\": \"foo\",\n\t\t\"riesTicketId\": 1,\n\t\t\"riesObjectId\": 1,\n\t\t\"riesClientId\": 1\n\t},\n\t\"membersData\": [{\n\t\t\"memberId\": 1231243120,\n\t\t\"entity\": 1,\n\t\t\"role\": 8\n\t}]\n}]",
+							"type": "text"
+						},
+						{
+							"key": "params",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "app.esoft.team/api",
+					"host": [
+						"app",
+						"esoft",
+						"team"
+					],
+					"path": [
+						"api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delination",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic test_local",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "service",
+							"value": "maintask-business",
+							"type": "text"
+						},
+						{
+							"key": "method",
+							"value": "createAndSetParams",
+							"type": "text"
+						},
+						{
+							"key": "body",
+							"value": "[{\n\t\"task\": {\n\t\t\"categoryId\": 8,\n\t\t\"priorityId\": 3,\n\t\t\"statusId\": 1,\n\t\t\"title\": \"foo\",\n\t\t\"riesTicketId\": 1,\n\t\t\"riesObjectId\": 1,\n\t\t\"riesClientId\": 1\n\t},\n\t\"membersData\": [{\n\t\t\"memberId\": 1231243120,\n\t\t\"entity\": 1,\n\t\t\"role\": 8\n\t}]\n}]",
+							"type": "text"
+						},
+						{
+							"key": "params",
+							"value": "{}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://ecosystem.esoft.space/api",
+					"protocol": "https",
+					"host": [
+						"ecosystem",
+						"esoft",
+						"space"
+					],
+					"path": [
+						"api"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
