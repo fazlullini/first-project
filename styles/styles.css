@@ -45,7 +45,7 @@ blockquote {
 
 .content-section {
   width: 360px;
-  height: 132px;
+  min-height: 100px;
   background-color: #131313;
 }
 
@@ -55,4 +55,8 @@ blockquote {
 
 .content-section_theme_bright {
   background-color:#FEE42A;
+}
+
+intro {
+  margin: 30 20 38 20;
 }
